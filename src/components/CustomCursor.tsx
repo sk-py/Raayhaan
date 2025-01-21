@@ -38,14 +38,35 @@ export function CustomCursor({ cursorText }: any) {
       transition={{ type: "spring", stiffness: 500, damping: 50 }}
       style={{ width: "50px", height: "50px" }}
     >
-      <div
+      {/* <div
         className={`relative rounded-full ${
           isEmailHover
-            ? "backdrop-invert text-inherit text-slate-400"
-            : "border-2 border-white bg-transparent"
+            ? `text-inherit ${
+                cursorText == "Copied!" ? "bg-white" : "backdrop-invert"
+              } text-slate-400`
+            : `border-2 border-white ${
+                cursorText == "Copied!" ? "bg-white" : "bg-transparent"
+              }`
         } w-full h-full flex items-center justify-center text-xs`}
       >
         <p className="text-center cursortext">{isEmailHover && cursorText}</p>
+      </div> */}
+      <div
+        className={`relative rounded-full w-full h-full flex items-center justify-center text-xs ${
+          isEmailHover
+            ? `text-inherit  ${
+                cursorText === "Copied!"
+                  ? "bg-blue-600 text-white"
+                  : "backdrop-invert text-slate-400"
+              }`
+            : `border-2 border-white ${
+                cursorText === "Copied!" ? "bg-blue-600" : "bg-transparent"
+              }`
+        }`}
+      >
+        <p className="text-center cursortext">
+          {isEmailHover ? cursorText : ""}
+        </p>
       </div>
     </motion.div>
   );

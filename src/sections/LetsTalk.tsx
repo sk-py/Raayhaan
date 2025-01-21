@@ -10,9 +10,10 @@ function LetsTalkContent() {
   const handleCopyEmail = async () => {
     await navigator.clipboard.writeText("raayhaangraphic@gmail.com");
     const cursor = document.querySelector(".custom-cursor div");
-    const cursorText = document.querySelector(".cursortext");
-    if (cursor && cursorText) {
+
+    if (cursor) {
       setcursorText("Copied!");
+
       setTimeout(() => {
         setcursorText("Copy Email");
       }, 1000);
@@ -22,7 +23,6 @@ function LetsTalkContent() {
   return (
     <footer className="inter-normal bg-[#1C1C1C] text-white min-h-screen overflow-y-hidden relative p-4 lg:p-8">
       <CustomCursor cursorText={cursorText} />
-
       {/* Top Navigation */}
       <nav className="flex justify-between items-start">
         <a href="/" className="text-2xl font-bold">

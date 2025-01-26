@@ -1,10 +1,7 @@
 import { motion } from "framer-motion";
-import { CustomCursor } from "@/components/CustomCursor";
-import { CursorProvider, useCursor } from "@/context/cursor-context";
 import { useState } from "react";
 
-function LetsTalkContent() {
-  const { setIsEmailHover } = useCursor();
+export function LetsTalk() {
   const [cursorText, setcursorText] = useState("Copy Email");
 
   const handleCopyEmail = async () => {
@@ -13,7 +10,6 @@ function LetsTalkContent() {
 
     if (cursor) {
       setcursorText("Copied!");
-
       setTimeout(() => {
         setcursorText("Copy Email");
       }, 1000);
@@ -21,8 +17,8 @@ function LetsTalkContent() {
   };
 
   return (
-    <footer className="inter-normal bg-[#1C1C1C] text-white min-h-screen overflow-y-hidden relative p-4 lg:p-8">
-      <CustomCursor cursorText={cursorText} />
+    <footer id="letstalk" className="inter-normal bg-[#1C1C1C] text-white min-h-screen overflow-y-hidden relative p-4 lg:p-8">
+      {/* <CustomCursor cursorText={cursorText} /> */}
       {/* Top Navigation */}
       <nav className="flex justify-between items-start">
         <a href="/" className="text-2xl font-bold">
@@ -42,7 +38,7 @@ function LetsTalkContent() {
       </nav>
 
       {/* Studio Info */}
-      <div className="mt-24 hidden grid grid-cols-2 gap-8">
+      <div className="mt-24  grid grid-cols-2 gap-8">
         <div className="space-y-2">
           <a href="mailto:shaikh56742@gmail.com" className="text-gray-400">
             @shaikh studio
@@ -106,14 +102,14 @@ function LetsTalkContent() {
           </div>
         </div>
 
-        {/* Let's Talk Text - Moved to bottom */}
+        {/* Let's Talk */}
         <motion.div
-          className="mt-24 h-full relative w-full text-left cursor-pointer"
+          className="mt-24 h-full relative w-full max-sm:text-left text-center cursor-pointer"
           onClick={handleCopyEmail}
-          onMouseEnter={() => setIsEmailHover(true)}
-          onMouseLeave={() => setIsEmailHover(false)}
+          // onMouseEnter={() => setIsEmailHover(true)}
+          // onMouseLeave={() => setIsEmailHover(false)}
         >
-          <h2 className="text-[24vw] max-sm:text-[40vw] leading-none font-bold space-grotesk-med tracking-tighter">
+          <h2 id="copyemail" className="text-[22vw] max-sm:text-[40vw] leading-none font-bold space-grotesk-med tracking-tighter">
             Let's talk
           </h2>
           <span className="md:hidden absolute -right-2 text-slate-300 bottom-6">
@@ -127,10 +123,10 @@ function LetsTalkContent() {
   );
 }
 
-export function LetsTalk() {
-  return (
-    <CursorProvider>
-      <LetsTalkContent />
-    </CursorProvider>
-  );
-}
+// export function LetsTalk() {
+//   return (
+//     // <CursorProvider>
+//       <LetsTalkContent />
+//     // </CursorProvider>
+//   );
+// }

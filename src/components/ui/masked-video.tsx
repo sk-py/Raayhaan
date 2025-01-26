@@ -41,7 +41,7 @@ export default function MaskedVideo({ videoPath }: { videoPath: string }) {
             />
                         <div className="absolute inset-0 flex items-center justify-center">
               <div className="text-center text-white p-8 rounded-xl bg-black bg-opacity-30  max-w-3xl">
-                <h2 className="text-4xl font-bold mb-4 leading-tight inter-bold">Bringing Ideas to Life with Motion & CGI</h2>
+                <h2 className="text-4xl font-bold mb-4 leading-tight roboto-bold">Bringing Ideas to Life with Motion & CGI</h2>
                 <p className="text-lg leading-relaxed roboto-bold">
                   From dynamic motion graphics to immersive 3D visuals and stunning CGI ads, I craft videos that
                   captivate, engage, and leave a lasting impact. Elevate your brand with visually compelling
